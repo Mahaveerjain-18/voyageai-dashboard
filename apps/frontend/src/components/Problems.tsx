@@ -18,7 +18,7 @@ export function Problems() {
       num: "03",
       title: "No more opaque transactions.",
       text: "Every payment is USDC on Base. Every booking has a transaction hash. One dashboard shows every dollar your AI agent spent — and why.",
-      img: "/images/problem-audit.png",
+      img: "/images/problem-audit-new.png",
     },
   ];
 
