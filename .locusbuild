@@ -1,0 +1,27 @@
+{
+  "services": {
+    "api": {
+      "path": "apps/backend",
+      "port": 8080,
+      "healthCheck": "/health",
+      "env": {
+        "NODE_ENV": "production",
+        "FRONTEND_URL": "${{web.URL}}"
+      }
+    },
+    "web": {
+      "path": "apps/frontend",
+      "port": 8080,
+      "healthCheck": "/",
+      "env": {
+        "API_URL": "${{api.URL}}",
+        "NEXT_PUBLIC_API_URL": "${{api.URL}}"
+      }
+    }
+  },
+  "addons": {
+    "db": {
+      "type": "postgres"
+    }
+  }
+}

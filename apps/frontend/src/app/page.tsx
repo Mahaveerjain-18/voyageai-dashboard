@@ -1,0 +1,66 @@
+"use client";
+
+import { useState } from "react";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Problems } from "@/components/Problems";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Features } from "@/components/Features";
+import { FAQ } from "@/components/FAQ";
+import { CTAFooter } from "@/components/CTAFooter";
+import { TripPlanner } from "@/components/TripPlanner";
+import { Dashboard } from "@/components/Dashboard";
+
+type View = "landing" | "planner" | "dashboard";
+
+export default function Home() {
+  const [view, setView] = useState<View>("landing");
+  const [tripId, setTripId] = useState<string | null>(null);
+
+  if (view === "planner") {
+    return (
+      <>
+        <Nav onLogoClick={() => setView("landing")} onStartPlanning={() => setView("planner")} />
+        <div className="fade-in" style={{ paddingTop: 80 }}>
+          <TripPlanner
+            onTripCreated={(id) => {
+              setTripId(id);
+              setView("dashboard");
+            }}
+            onBack={() => setView("landing")}
+          />
+        </div>
+      </>
+    );
+  }
+
+  if (view === "dashboard" && tripId) {
+    return (
+      <>
+        <Nav onLogoClick={() => setView("landing")} onStartPlanning={() => setView("planner")} />
+        <div className="fade-in" style={{ paddingTop: 80 }}>
+          <Dashboard tripId={tripId} onBack={() => setView("landing")} />
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Nav onLogoClick={() => setView("landing")} onStartPlanning={() => setView("planner")} />
+      <main>
+        <Hero onStartPlanning={() => setView("planner")} />
+        <div className="section-divider" />
+        <Problems />
+        <div className="section-divider" />
+        <HowItWorks />
+        <div className="section-divider" />
+        <Features />
+        <div className="section-divider" />
+        <FAQ />
+        <div className="section-divider" />
+        <CTAFooter onStart={() => setView("planner")} />
+      </main>
+    </>
+  );
+}
