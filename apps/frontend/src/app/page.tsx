@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Problems } from "@/components/Problems";
 import { HowItWorks } from "@/components/HowItWorks";
+import { DestinationMarquee } from "@/components/DestinationMarquee";
 import { Features } from "@/components/Features";
 import { FAQ } from "@/components/FAQ";
 import { CTAFooter } from "@/components/CTAFooter";
@@ -54,6 +55,8 @@ export default function Home() {
         <Problems />
         <div className="section-divider" />
         <HowItWorks />
+        <div className="section-divider" />
+        <DestinationMarquee />
         <div className="section-divider" />
         <Features />
         <div className="section-divider" />
