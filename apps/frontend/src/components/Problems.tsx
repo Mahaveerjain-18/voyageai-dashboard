@@ -6,7 +6,7 @@ export function Problems() {
       num: "01",
       title: "No more 47 open tabs.",
       text: "Every search is a rabbit hole. Flights on one site, hotels on another, reviews somewhere else. You spend 10 hours researching a 5-day trip.",
-      img: "/images/problem-travel.png",
+      img: "/images/problem-tabs-new.png",
     },
     {
       num: "02",
