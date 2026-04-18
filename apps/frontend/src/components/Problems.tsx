@@ -12,7 +12,7 @@ export function Problems() {
       num: "02",
       title: "No more second-guessing prices.",
       text: "Is this the best deal? Should you wait? The AI searches 6 data sources in parallel, compares across vendors, and explains its reasoning.",
-      img: "/images/problem-prices.png",
+      img: "/images/problem-prices-new.png",
     },
     {
       num: "03",
